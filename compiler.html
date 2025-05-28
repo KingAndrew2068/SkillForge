@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Compiler HTML</title>
+  <style>
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  border: 1px solid #e8e8e8;
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 16px;
+  padding: 12px;
+  background: white;
+  z-index: 1000;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+nav .logo img {
+  width: 30px;
+  height: 30px;
+}
+
+nav .logo a {
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  position: relative;
+}
+
+nav .nav-links a {
+  font-size: 14px;
+  color: #606060;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+nav .nav-links a:hover {
+  color: #000;
+}
+
+nav button, .dropbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 14px;
+  height: 32px;
+  width: 140px;
+  background: #000;
+  color: #fff;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+nav button:hover,
+.dropbtn:hover {
+  box-shadow: 0 8px 24px rgba(0, 255, 0, 0.5);
+    transform: translateY(-4px);
+    background: #000000;
+    color: #ffffff !important;  /* Asigurăm alb și la hover */
+}
+
+nav button i, .dropbtn i {
+  font-size: 16px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Ascuns implicit */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 38px;
+  left: 0;
+  background-color: #fff;
+  min-width: 180px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  border: 1px solid #e8e8e8;
+  z-index: 10000;
+  padding: 8px 0;
+}
+
+/* Link-urile dropdown */
+.dropdown-content a {
+  color: #606060;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+/* Clasa pentru a arăta dropdown-ul */
+.dropdown-content.show {
+  display: block;
+}
+
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 120px 20px 20px; 
+      background: #f4f4f4;
+    }
+    
+
+    h2 {
+      text-align: center;
+    }
+
+    .editor-container {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .editor {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .editor label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 200px;
+      font-family: monospace;
+      padding: 10px;
+      resize: vertical;
+    }
+
+    button {
+      padding: 12px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: 2px solid #ccc;
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="images/logo.webp" alt="logo">
+      <a href="#">SkillForge</a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Acasă</a>
+      <a href="#">Proiecte</a>
+      <div class="dropdown">
+        <button class="dropbtn" id="dropdownBtn">
+          Compilere <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="dropdownContent">
+          <a href="compiler.html">Compiler HTML & CSS & JS</a>
+          <a href="compcpy.html">Compiler C++ & Python</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <h2>Mini Compiler HTML + CSS + JS</h2>
+
+  <div class="editor-container">
+    <div class="editor">
+      <label for="htmlCode">HTML</label>
+      <textarea id="htmlCode" placeholder="Scrie cod HTML aici..."></textarea>
+    </div>
+    <div class="editor">
+      <label for="cssCode">CSS</label>
+      <textarea id="cssCode" placeholder="Scrie cod CSS aici..."></textarea>
+    </div>
+    <div class="editor">
+      <label for="jsCode">JavaScript</label>
+      <textarea id="jsCode" placeholder="Scrie cod JavaScript aici..."></textarea>
+    </div>
+  </div>
+
+  <button onclick="compileCode()">Compilează</button>
+
+  <iframe id="output"></iframe>
+
+  <script>
+      const dropdownBtn = document.getElementById('dropdownBtn');
+  const dropdownContent = document.getElementById('dropdownContent');
+
+  // Toggle dropdown la click pe buton
+  dropdownBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // oprește propagarea evenimentului să nu se închidă imediat
+    dropdownContent.classList.toggle('show');
+  });
+
+  // Închide dropdown dacă dai click în altă parte
+  window.addEventListener('click', () => {
+    dropdownContent.classList.remove('show');
+  });
+
+    function compileCode() {
+      const html = document.getElementById("htmlCode").value;
+      const css = "<style>" + document.getElementById("cssCode").value + "</style>";
+      const js = "<script>" + document.getElementById("jsCode").value + "<\/script>";
+      const result = html + css + js;
+      const output = document.getElementById("output").contentWindow.document;
+      output.open();
+      output.write(result);
+      output.close();
+    }
+  </script>
+</body>
+</html>

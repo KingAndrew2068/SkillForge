@@ -1,0 +1,36 @@
+Cerere primită: Array
+(
+    [language] => cpp
+    [code] => #include <iostream>
+int main() {
+  std::cout << "Salut din C++!";
+  return 0;
+}
+
+)
+
+Răspuns final: Fără rezultat.
+Cerere primită: Array
+(
+    [language] => cpp
+    [code] => #include <iostream>
+int main() {
+  std::cout << "Salut din C++!";
+  return 0;
+}
+
+)
+
+Răspuns final: Fără rezultat.
+Cerere primită: Array
+(
+    [language] => cpp
+    [code] => #include <iostream>
+int main() {
+  std::cout << "Salut din C++!";
+  return 0;
+}
+
+)
+
+Răspuns final: Fără rezultat.
