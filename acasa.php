@@ -1,6 +1,4 @@
 <?php include 'includes/header.php'; ?>
-
-
   <nav>
     <div class="logo">
       <img src="images/logo.webp" alt="SkillForge logo" />
@@ -8,7 +6,7 @@
     </div>
     <div class="nav-links">
       <a href="acasa.php">Acasă</a>
-      <a href="#">Proiecte</a>
+      <a href="tutorials.php">Tutoriale</a>
       <div class="dropdown">
         <button class="dropbtn" id="dropdownBtn">
           Compilere <i class="fa fa-caret-down"></i>
@@ -53,7 +51,7 @@
                 <br>○ Aplicații grafice (cronometre, notițe)
                 <br>○ Proiecte hardware (Arduino, Raspberry Pi)
               </p>
-              <a href="python-projects.html" class="btn">Vezi proiecte <i class="ri-arrow-right-line"></i></a>
+              <a href="https://github.com/KingAndrew2068/Probleme-Python" class="btn">Vezi proiecte <i class="ri-arrow-right-line"></i></a>
             </div>
           </div>
       
@@ -69,7 +67,7 @@
                 <br>○ Design CSS atrăgător
                 <br>○ Structuri responsive pentru mobil
               </p>
-              <a href="html-projects.html" class="btn">Vezi proiecte <i class="ri-arrow-right-line"></i></a>
+              <a href="https://github.com/KingAndrew2068/Proiecte" class="btn">Vezi proiecte <i class="ri-arrow-right-line"></i></a>
             </div>
           </div>
       
@@ -85,7 +83,7 @@
                 <br>○ Introducere în OOP
                 <br>○ Simulări logice sau competiții
               </p>
-              <a href="cpp-projects.html" class="btn">Vezi proiecte <i class="ri-arrow-right-line"></i></a>
+              <a href="https://github.com/KingAndrew2068/Probleme-C-" class="btn">Vezi probleme<i class="ri-arrow-right-line"></i></a>
             </div>
           </div>
       
@@ -97,7 +95,7 @@
       <div class="inner">
           <h2>Ce poți realiza cu SkillForge</h2>
           <p class="info">Descoperă cum SkillForge te ajută să înveți programare prin practică și să-ți creezi propriile proiecte interesante.</p>
-          <button>Explorează platforma <i class="ri-arrow-right-line"></i></button>
+          <button>Explorează platforma</button>
   
           <div class="items">
               <div class="item">
