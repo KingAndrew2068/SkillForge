@@ -12,7 +12,7 @@ if (!isset($_SESSION['username'])) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tutoriale Programare</title>
+  <title>Despre Programare</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
    
@@ -49,7 +49,7 @@ body {
     </div>
     <div class="nav-links">
       <a href="acasa.php">Acasă</a>
-      <a href="tutorials.php">Tutoriale</a>
+      <a href="tutorials.php">Lecții de început</a>
       <div class="dropdown">
         <button class="dropbtn" id="dropdownBtn">
           Compilere <i class="fa fa-caret-down"></i>
