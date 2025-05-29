@@ -59,3 +59,8 @@ Backend-ul,asemenea,este făcut cu ajutorul inteligenței artificiale pentru a l
 ├── images/              # Logo, icoane, fundaluri (sursă necunoscută, preluate online)
 └── README.md            # Documentație completă
 ```
+![image](https://github.com/user-attachments/assets/bf937bdb-c673-4cc5-8775-c9d2b09f56f5)
+![image](https://github.com/user-attachments/assets/641ecca2-74e9-4ae5-b334-307ff1f1bfa8)
+![image](https://github.com/user-attachments/assets/6ccb6166-7de9-46ce-952c-de44eb004941)
+![image](https://github.com/user-attachments/assets/17410458-1a81-4a19-8505-57fee6eadad2)
+![image](https://github.com/user-attachments/assets/68046a1f-cb34-4925-aa9d-638773006f5a)
